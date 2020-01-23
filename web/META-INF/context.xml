@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/coursework">
+    <Resource name="jdbc/LessonDatabase" auth="Container" type="javax.sql.DataSource"
+    maxActive="100" maxIdle="30" maxWait="10000"
+    username="jivrajae-admin" password="MCDH7JPIsck4BN3" driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://jivrajae.cs3160-web01pvm.aston.ac.uk:3306/jivrajae_db"/>
+</Context>

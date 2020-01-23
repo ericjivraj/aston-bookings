@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is the Lesson Selection View, by Eric Jivraj, this jsp aims to display selected lessons for viewing -->
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:f="http://java.sun.com/jsp/jstl/fmt"
+          version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+      <jsp:element name="html">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        
+        <jsp:body>
+            
+
+            <h1>My Lesson Plan</h1>
+            
+            <p>Hello, <c:out value="${sessionScope.user}" /></p>
+            
+            
+            <jsp:include page="navigation.jspx"/>
+            
+            <table border="3">
+                
+                <tr>
+                    <th>Description</th>
+                    
+                    <th>Date</th>
+                    
+                    <th>Start Time</th>
+                    
+                    <th>End Time</th>
+                    
+                    <th>Level</th>   
+                </tr>
+                
+                <c:forEach var="entry" items="${lessonSelection.items}">
+                    
+                    <form method="POST" action="http://localhost:8084/coursework/do/cancelLesson">
+                        <tr>
+                            
+                            <td><c:out value="${entry.value.description}"/></td>
+                            
+                            <td><c:out value="${entry.value.date}"/></td>
+                            
+                            <td><c:out value="${entry.value.startTime}"/></td>
+                            
+                            <td><c:out value="${entry.value.endTime}"/></td>
+                            
+                            <td><c:out value="${entry.value.level}"/></td>
+                          
+                           <c:if test="${lessonSelection.lessonExists(entry.key) == true}" > 
+                                
+                               <td>
+                                   <input type="hidden" name="cancelLesson" value="${entry.key}"/>
+                                   <input type="submit" value="Cancel"/>
+                               </td>
+                           
+                           </c:if>
+                                
+                        </tr>
+                    </form>
+                            
+                </c:forEach>
+                
+            </table>
+            
+            <jsp:include page="footer.jspx"/>
+            
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

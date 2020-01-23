@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is the Confirmed Booking View, by Eric Jivraj -->
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" 
+            xmlns:c="http://java.sun.com/jsp/jstl/core" 
+            version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    
+      <jsp:element name="html">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        
+        <jsp:body>
+            
+            <h1>Booking Confirmed</h1>
+            
+            <h2>Well done, <c:out value="${sessionScope.user}" /></h2>
+            
+            <jsp:include page="navigation.jspx"/>
+            
+            <h3> Congratulations, Your booking has been made!</h3>
+            
+            <h4>Logout<a href="http://localhost:8084/coursework/do/login"> here </a></h4>
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

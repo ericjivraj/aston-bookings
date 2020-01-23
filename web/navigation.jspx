@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is the Navigation JSP, by Eric Jivraj -->
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        
+        <jsp:body>
+            
+            <table cellborder="3">
+                
+                <tr>
+                    <th>[ <a href="/coursework/LessonTimetableView.jspx">View All Lessons</a></th>
+                    <th>| <a href="/coursework/LessonSelectionView.jspx">View My Selected Lessons</a> |</th>
+                    <th><a href="http://localhost:8084/coursework/do/logout">Logout</a> ]</th>
+               </tr>
+               
+            </table>
+        
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>
